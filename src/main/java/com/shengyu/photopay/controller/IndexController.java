@@ -1,8 +1,15 @@
 package com.shengyu.photopay.controller;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * <p>Title: IndexController.java</p>
@@ -15,10 +22,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
 	
-	@RequestMapping("index")
-	@ResponseBody
-	public String index()
+	@RequestMapping("upload")
+	public String upload()
 	{
-		return "00000";
+		return "upload";
 	}
+	
+	
+	@RequestMapping("doUpload")
+	public String doUpload(@RequestParam MultipartFile uploadFile[])
+	{
+		for(MultipartFile file :uploadFile)
+		{
+			System.out.println(file.getOriginalFilename());
+		}
+		return null;
+	}
+	
 }

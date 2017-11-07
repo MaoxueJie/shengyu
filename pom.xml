@@ -24,11 +24,23 @@
 		    <groupId>org.apache.taglibs</groupId>
 		    <artifactId>taglibs-standard-spec</artifactId>
 		    <version>1.2.5</version>
-		</dependency>
-		<dependency>
+	</dependency>
+	<dependency>
 		    <groupId>org.apache.taglibs</groupId>
 		    <artifactId>taglibs-standard-impl</artifactId>
 		    <version>1.2.5</version>
-		</dependency>
+	</dependency>
+	<dependency>
+			  <groupId>javax.servlet</groupId>
+			  <artifactId>servlet-api</artifactId>
+			  <version>2.4</version>
+			  <scope>provided</scope>
+	</dependency>
+     	<dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>2.2</version>
+                <scope>provided</scope>
+        </dependency>
   </dependencies>
 </project>
