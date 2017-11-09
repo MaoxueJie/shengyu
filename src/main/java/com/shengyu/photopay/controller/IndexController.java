@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.regex.Matcher;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,9 +35,21 @@ public class IndexController {
 	{
 		for(MultipartFile file :uploadFile)
 		{
-			System.out.println(file.getOriginalFilename());
+			String fileName = file.getOriginalFilename();
+			
 		}
 		return null;
+	}
+	
+	public static void main(String args[])
+	{
+		String pattern = "^IMG_\\d{4}.JPG";
+		String fileName = "IMG_0001.JPG";
+		System.out.println(fileName.matches(pattern));
+		String []fileNames = fileName.split("\\.|\\_");
+		System.out.println(fileNames[0]);
+		System.out.println(fileNames[1]);
+		System.out.println(fileNames[2]);
 	}
 	
 }
