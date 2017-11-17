@@ -25,7 +25,7 @@ public class Config extends EncryptPropertyPlaceholderConfigurer
 
     private AESPropConfig aesPropConfig = new AESPropConfig();
 
-    private static Map<String, Object> ctxPropertiesMap; 
+    private static Map<String, String> ctxPropertiesMap; 
     
     
     @Override  
@@ -34,7 +34,7 @@ public class Config extends EncryptPropertyPlaceholderConfigurer
   
         super.processProperties(beanFactory, props);  
         //load properties to ctxPropertiesMap  
-        ctxPropertiesMap = new HashMap<String, Object>();  
+        ctxPropertiesMap = new HashMap<String, String>();  
         for (Object key : props.keySet()) {  
             String keyStr = key.toString();  
             String value = props.getProperty(keyStr);  
@@ -43,13 +43,13 @@ public class Config extends EncryptPropertyPlaceholderConfigurer
     }  
   
     //static method for accessing context properties  
-    public static Object getContextProperty(String name) {  
+    public static String getContextProperty(String name) {  
         return ctxPropertiesMap.get(name);  
     } 
     
     //static method for accessing context properties  
-    public static Object getContextProperty(String name,Object defaultValue) {
-    	Object value = ctxPropertiesMap.get(name);  
+    public static String getContextProperty(String name,String defaultValue) {
+    	String value = ctxPropertiesMap.get(name);  
     	if (value!=null)
     		return value;
     	return defaultValue;

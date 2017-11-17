@@ -13,7 +13,7 @@
     	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
     	
     	<bean id="propertyPlaceholderConfigurer"
-          class="com.jfbank.openapi.common.util.SpringSecretPropertyReader">
+          class="com.shengyu.photopay.util.Config">
 	        <property name="locations" >
 	            <list>
 	            	<value>classpath:config.properties</value>

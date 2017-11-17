@@ -1,0 +1,11 @@
+
+{
+  "aesKeyFilePath":"/www/.jf/aes-1.key",
+  //是否对所有属性进行加密或解密，当aesPropKeyNames有值时该项为false
+  "allPropKey":false,
+  "aesPropKeyNames":[
+//    "wlc.dbsource.password",
+//    "rabbitmq.coreservice.password",
+//    "sms.md.pwd"
+  ]
+}
